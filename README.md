@@ -208,9 +208,12 @@ Semaphore：一个计数信号量
 CountDownLatch：一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
 CyclicBarrier：一个同步辅助类，它允许一组线程互相等待，直到到达某个公共屏障点
 Exchanger：方便了两个共同操作线程之间的双向交换
+
 42-44.FuterTask
 哎，没理解透，找个好心情再出发： https://blog.csdn.net/codershamo/article/details/51901057
+
 45.Fork/Join框架
+
 拆分处理最后合并，能够发挥多核服务器的优势
 ForkJoinTask 实现类 RecursiveTask
 class A extends RecursiveTask
@@ -225,14 +228,20 @@ return a1.join() + a2.join();
 ForkJoinPool pool = new ForkJoinPool();
 Future f = pool.submit(new A());
 结果：f.get();
+
 46-48.同步容器和并发容器
+
 Vector（线程安全） -----同步容器----> ArrayList（线程不安全）-----并发容器----->CopyOnWriteArrayList
 Hashtable（线程安全）-------同步容器----> HashMap（线程不安全）----并发容器----->CopyOnWriteHashMap
 并发容器：ConcurrentLinkedQueue
+
 49.java中的阻塞队列BlockingQueue
+
 private BlockingQueue queue = new ArrayBlockingQueue<>(10);
 queue.push(1)发送 queue.take()抓取
+
 50.Executors框架
+
 public static void main(String[] args) {
 // ExecutorService threadPool = Executors.newFixedThreadPool(10);//分配固定的线程数
 ExecutorService threadPool = Executors.newCachedThreadPool();// 根据需要自动建立相应的线程数
